@@ -1,0 +1,13 @@
+name: Ciallo
+version: '${project.version}'
+main: org.gayloc.ciallo.Ciallo
+api-version: '1.20'
+commands:
+  ciallo:
+    description: Play an audio for a player and yourself.
+    usage: /ciallo <player>
+    permission: ciallo.use
+permissions:
+  ciallo.use:
+    description: 柚子厨对接暗号使用权限。
+    default: true
