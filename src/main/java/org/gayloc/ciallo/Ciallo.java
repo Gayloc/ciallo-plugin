@@ -4,9 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Ciallo extends JavaPlugin implements Listener {
@@ -30,13 +28,13 @@ public class Ciallo extends JavaPlugin implements Listener {
                 if (targetPlayer != null && targetPlayer.isOnline()) {
                     if (sender instanceof Player) {
                         Player senderPlayer = (Player) sender;
-                        // 检查发送者和目标玩家是否是同一个人
                         if (!senderPlayer.equals(targetPlayer)) {
                             senderPlayer.playSound(senderPlayer.getLocation(), "minecraft:yuzusoft.ciallo", 1.0f, 1.0f);
                         }
                     }
                     targetPlayer.playSound(targetPlayer.getLocation(), "minecraft:yuzusoft.ciallo", 1.0f, 1.0f);
                     sender.sendMessage( sender.getName() + "对" + targetPlayer.getName() + "说Ciallo(∠・ω< )⌒☆");
+                    targetPlayer.sendMessage(sender.getName() + "对" + targetPlayer.getName() + "说Ciallo(∠・ω< )⌒☆");
                     return true;
                 } else {
                     sender.sendMessage("未找到目标玩家");
